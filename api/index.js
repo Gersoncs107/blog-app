@@ -10,9 +10,9 @@ const userRoutes = require('./routes/users');
 
 app.use(express.json())
 
-app.use('/posts', postRoutes)
-app.use('/comments', commentRoutes)
-app.use('/users', userRoutes)
+app.use('/posts', postRoutes);
+app.use('/comments', commentRoutes);
+app.use('/users', userRoutes);
 
 app.get('/', async (req, res) => {
   res.send('Blog API')
