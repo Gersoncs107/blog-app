@@ -4,9 +4,9 @@ require('dotenv').config()
 const app = express()
 const prisma = new PrismaClient()
 
-const postRoutes = require('./routes/posts')
-const commentRoutes = require('./routes/comments')
-const userRoutes = require('./routes/users')
+const postRoutes = require('./routes/posts');
+const commentRoutes = require('./routes/comments');
+const userRoutes = require('./routes/users');
 
 app.use(express.json())
 
