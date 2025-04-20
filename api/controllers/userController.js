@@ -54,5 +54,5 @@ const getAllUsers = async (req, res) => {
     }
 };
 
-module.exports = { registerUser, login, getAllUsers };
+module.exports = { registerUser, getAllUsers };
 
