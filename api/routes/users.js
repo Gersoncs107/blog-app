@@ -5,6 +5,6 @@ const {registerUser} = require('../controllers/userController');
 
 // Example placeholder handlers
 router.get('/', (req, res) => res.send('Users route'));
-router.post('/register', (req, res) => res.send('Create user'));
+router.post('/register', registerUser);
 
 module.exports = router;

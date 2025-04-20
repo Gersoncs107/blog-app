@@ -21,9 +21,9 @@ exports.login = async (req, res) => {
 
 // User registration
 const registerUser = async (req, res) => {
-    const { username, email, password } = req.body;
+    const { name, email, password } = req.body;
 
-    if (!username || !email || !password) {
+    if (!name || !email || !password) {
         return res.status(400).json({ error: 'All fields are required' });
     }
 
@@ -36,7 +36,7 @@ const registerUser = async (req, res) => {
 
         // Create a new user
         const newUser = await prisma.user.create({
-            data: { username, email, password },
+            data: { name, email, password },
         });
 
         res.status(201).json(newUser);
@@ -45,5 +45,14 @@ const registerUser = async (req, res) => {
     }
 };
 
-module.exports = { registerUser };
+const getAllUsers = async (req, res) => {
+    try {
+        const users = await prisma.user.findMany();
+        res.json(users);
+    } catch (error) {
+        res.status(500).json({ error: 'Failed to fetch users' });
+    }
+};
+
+module.exports = { registerUser, login, getAllUsers };
 
