@@ -4,7 +4,7 @@ const router = express.Router();
 const {registerUser, getAllUsers} = require('../controllers/userController');
 
 // Example placeholder handlers
-router.get('/', (req, res) => getAllUsers);
+router.get('/', getAllUsers);
 router.post('/register', registerUser);
 
 module.exports = router
