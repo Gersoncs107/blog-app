@@ -7,5 +7,17 @@ function PostList(){
         fetch('http://localhost:3000/posts')
         .then((res) => res.json())
         .then((data) => setPosts(data))
-    })
+    }, [])
+
+    return(
+        <div>
+            <h1>Blog</h1>
+        {posts.map((post) => (
+        <div key={post.id}>
+          <h2>{post.title}</h2>
+          <p>{post.content}</p>
+        </div>
+      ))}
+        </div>
+    )
 }
