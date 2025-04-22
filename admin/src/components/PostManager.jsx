@@ -23,4 +23,15 @@ function PostManager(){
             body: JSON.stringify({published: !published})
         })
     }
+
+    return(
+        <div>
+            <h1>Gerenciar Posts</h1>
+            {posts.map((post) => {
+                <div key={post.id}>
+
+                </div>
+            })}
+        </div>
+    )
 }
