@@ -1,7 +1,7 @@
 import { Editor } from "@tinymce/tinymce-react";
 import { useState } from "react";
 
-function newPost() {
+function NewPost() {
     const [content, setContent] = useState('')
 
     return(
@@ -12,3 +12,5 @@ function newPost() {
         />
     )
 }
+
+export default NewPost
