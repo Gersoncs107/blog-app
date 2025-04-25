@@ -1,4 +1,5 @@
 Blog API with JWT Authentication
+
 This project is a full-stack application that simulates a complete blog system with support for posts, comments, and user authentication using JWT. It is divided into three main parts: a RESTful API built with Express and Prisma, a public front-end for viewing posts and comments, and an admin dashboard for managing content.
 
 ✨ Features
@@ -86,6 +87,7 @@ curl via terminal
 \\----------------------------------------------------------------------------------------------------------------------------------------------------------------\\
 
 📝 Blog API com Autenticação JWT
+
 Este projeto é uma aplicação full-stack que simula um sistema de blog com funcionalidades completas para posts, comentários e autenticação de usuários utilizando JWT. Ele é dividido em três partes principais: uma API RESTful construída com Express e Prisma, um front-end público para visualização de posts e comentários, e um painel administrativo para gerenciamento do conteúdo.
 
 ✨ Funcionalidades
