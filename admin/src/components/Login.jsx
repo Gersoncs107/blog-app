@@ -13,6 +13,10 @@ function Login({setToken}){
                 email,
                 password
             })
+            const token = response.data.token
+            setToken(token)
+            localStorage.setItem('token', token)
+            setError('')
         } catch (error) {
             setError('Invalid email or password')
         }
