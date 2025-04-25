@@ -35,8 +35,20 @@ function Login({setToken}){
                     onChange={(e) => setEmail(e.target.value)}
                     required />
                 </div>
+
+                <div>
+                    <label>Senha</label>
+                    <input 
+                    type="password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    required />
+                </div>
+                <button type="submit">Entrar</button>
             </form>
         </div>
     )
     
 }
+
+export default Login
