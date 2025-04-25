@@ -7,7 +7,9 @@ const prisma = new PrismaClient()
 const postRoutes = require('./routes/posts');
 const commentRoutes = require('./routes/comments');
 const userRoutes = require('./routes/users');
+const cors = require('cors')
 
+app.use(cors())
 app.use(express.json())
 
 app.use('/posts', postRoutes);
