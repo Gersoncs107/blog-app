@@ -5,6 +5,7 @@ import PostForm from './PostForm';
 function PostList({ token }) {
   const [posts, setPosts] = useState([]);
   const [editingPost, setEditingPost] = useState(null);
+  const [selectedPostId, setSelectedPostId] = useState(null)
 
   useEffect(() => {
     fetchPosts();
@@ -64,6 +65,8 @@ function PostList({ token }) {
           </li>
         ))}
       </ul>
+      {selectedPostId && <CommentManager token={token} postId={selectedPostId} />}
+      <button onClick={() => setSelectedPostId(post.id)}>Gerenciar Comentários</button>
     </div>
   );
 }
