@@ -1,6 +1,0 @@
-{
-  "dependencies": {
-    "@prisma/client": "^6.6.0",
-    "@tinymce/tinymce-react": "^6.1.0"
-  }
-}
