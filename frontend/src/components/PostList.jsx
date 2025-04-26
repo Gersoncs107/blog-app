@@ -1,7 +1,4 @@
 
-
-
-
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
@@ -30,7 +27,9 @@ function PostList() {
   );
 }
 
-export default PostList;// import {useEfect, useState} from 'react';
+export default PostList;
+
+// import {useEfect, useState} from 'react';
 
 // function PostList(){
 //     const [posts, setPosts] = useState([])
