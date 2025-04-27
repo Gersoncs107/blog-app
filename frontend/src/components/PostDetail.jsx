@@ -76,3 +76,4 @@ function PostDetail() {
     </div>
     )
 }
+export default PostDetail
