@@ -9,7 +9,9 @@ const commentRoutes = require('./routes/comments');
 const userRoutes = require('./routes/users');
 const cors = require('cors')
 
-app.use(cors())
+app.use(cors({
+  origib: ['https://blog-frontend.vercel.app', 'https://blog-admin.vercel.app']
+}))
 app.use(express.json())
 
 app.use('/posts', postRoutes);
