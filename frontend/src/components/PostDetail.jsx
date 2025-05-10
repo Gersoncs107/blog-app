@@ -8,7 +8,7 @@ function PostDetail() {
     const [comments, setComments] = useState([])
     const [newComment, setNewComment] = useState({content: '',username: '', email: ''})
 
-    useeffect(() => {
+    useEffect(() => {
         axios.get(`${process.env.REACT_APP_API_URL}/posts/${id}`)
             .then((response) => setPost(response.data))
             .catch((err) => console.error('Erro ao buscar post:', err));
