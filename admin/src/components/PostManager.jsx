@@ -40,3 +40,5 @@ function PostManager() {
     </div>
   );
 }
+
+export default PostManager;
