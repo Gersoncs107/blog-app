@@ -1,10 +1,17 @@
 import { useState } from 'react';
 import Login from './components/Login';
-import PostList from './components/PostList'
-import logo from './logo.svg';
+import PostList from './components/PostList';
 import './App.css';
 
 function App() {
+  const [token, setToken] = useState(localStorage.getItem('token')); // Define token and setToken
+
+  const handleLogout = () => {
+    // Define handleLogout
+    localStorage.removeItem('token');
+    setToken(null);
+  };
+
   return (
     <div className="App">
       <header>
