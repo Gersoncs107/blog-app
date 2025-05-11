@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import PostForm from './PostForm';
-import CommentManager from './CommentManager';
+import CommentManager from './CommentManager'; // Import CommentManager
 
 function PostList({ token }) {
   const [posts, setPosts] = useState([]);
   const [editingPost, setEditingPost] = useState(null);
-  const [selectedPostId, setSelectedPostId] = useState(null)
+  const [selectedPostId, setSelectedPostId] = useState(null);
 
   useEffect(() => {
     fetchPosts();
