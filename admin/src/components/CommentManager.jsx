@@ -1,16 +1,10 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 
 function CommentManager({ token, postId }) {
   const [comments, setComments] = useState([]);
 
-  useEffect(() => {
-    if (postId) {
-      fetchComments();
-    }
-  }, [postId]);
-
-  const fetchComments = async () => {
+  const fetchComments = useCallback(async () => {
     try {
       const response = await axios.get(`${process.env.REACT_APP_API_URL}/posts/${postId}/comments`, {
         headers: { Authorization: `Bearer ${token}` },
@@ -19,7 +13,13 @@ function CommentManager({ token, postId }) {
     } catch (err) {
       console.error('Erro ao buscar comentários:', err);
     }
-  };
+  }, [postId, token]);
+
+  useEffect(() => {
+    if (postId) {
+      fetchComments();
+    }
+  }, [postId, fetchComments]);
 
   const deleteComment = async (commentId) => {
     if (window.confirm('Tem certeza que deseja deletar este comentário?')) {
