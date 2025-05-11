@@ -63,11 +63,11 @@ function PostList({ token }) {
             </button>
             <button onClick={() => setEditingPost(post)}>Editar</button>
             <button onClick={() => deletePost(post.id)}>Deletar</button>
+            <button onClick={() => setSelectedPostId(post.id)}>Gerenciar Comentários</button>
           </li>
         ))}
       </ul>
       {selectedPostId && <CommentManager token={token} postId={selectedPostId} />}
-      <button onClick={() => setSelectedPostId(post.id)}>Gerenciar Comentários</button>
     </div>
   );
 }
