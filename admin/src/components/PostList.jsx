@@ -1,18 +1,14 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 import PostForm from './PostForm';
-import CommentManager from './CommentManager'; // Import CommentManager
+import CommentManager from './CommentManager';
 
 function PostList({ token }) {
   const [posts, setPosts] = useState([]);
   const [editingPost, setEditingPost] = useState(null);
   const [selectedPostId, setSelectedPostId] = useState(null);
 
-  useEffect(() => {
-    fetchPosts();
-  }, []);
-
-  const fetchPosts = async () => {
+  const fetchPosts = useCallback(async () => {
     try {
       const response = await axios.get(`${process.env.REACT_APP_API_URL}/posts`, {
         headers: { Authorization: `Bearer ${token}` },
@@ -21,7 +17,11 @@ function PostList({ token }) {
     } catch (err) {
       console.error('Erro ao buscar posts:', err);
     }
-  };
+  }, [token]);
+
+  useEffect(() => {
+    fetchPosts();
+  }, [fetchPosts]);
 
   const togglePublish = async (postId, published) => {
     try {
@@ -30,7 +30,7 @@ function PostList({ token }) {
         { published: !published },
         { headers: { Authorization: `Bearer ${token}` } }
       );
-      fetchPosts(); // Atualiza a lista
+      fetchPosts();
     } catch (err) {
       console.error('Erro ao atualizar post:', err);
     }
