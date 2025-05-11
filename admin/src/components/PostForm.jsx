@@ -57,7 +57,7 @@ function PostForm({ token, fetchPosts, editingPost, setEditingPost }) {
         <div>
           <label>Conteúdo:</label>
           <Editor
-            apiKey="no-api-key" // Substitua pela sua chave do TinyMCE
+            apiKey={process.env.REACT_APP_TINYMCE_API_KEY} // Substitua pela sua chave do TinyMCE
             value={content}
             onEditorChange={(newContent) => setContent(newContent)}
             init={{
