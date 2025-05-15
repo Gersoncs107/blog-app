@@ -8,8 +8,9 @@ const postRoutes = require('./routes/posts');
 const commentRoutes = require('./routes/comments');
 const userRoutes = require('./routes/users');
 const cors = require('cors')
+
 app.use(cors({
-  origin: ['https://blog-app-eta-five-75.vercel.app/', 'https://blog-app-r8ve.vercel.app/']
+  origin: ['https://blog-app-eta-five-75.vercel.app', 'https://blog-app-r8ve.vercel.app']
 }))
 app.use(express.json())
 
